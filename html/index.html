@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Converter</title>
+    
+    <!-- Add Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Add Bootstrap JavaScript and jQuery (Optional for Bootstrap features) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        /* Your custom styles here */
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Area Converter</h1>
+        <p>Type a value in any of the fields to convert between area measurements:</p>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="sqFeet">Square Feet:</label>
+                <input id="sqFeet" class="form-control" type="number" placeholder="Square Feet"
+                    oninput="areaConverter(this.id, this.value)" onchange="areaConverter(this.id, this.value)">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="sqMeters">Square Meters:</label>
+                <input id="sqMeters" class="form-control" type="number" placeholder="Square Meters"
+                    oninput="areaConverter(this.id, this.value)" onchange="areaConverter(this.id, this.value)">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="acres">Acres:</label>
+                <input id="acres" class="form-control" type="number" placeholder="Acres"
+                    oninput="areaConverter(this.id, this.value)" onchange="areaConverter(this.id, this.value)">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="kanal">ਕਨਾਲ (1/8th Acre):</label>
+                <input id="kanal" class="form-control" type="number" placeholder="ਕਨਾਲ (1/8th Acre)"
+                    oninput="areaConverter(this.id, this.value)" onchange="areaConverter(this.id, this.value)">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="marla">ਮਰਲਾ (1/160th Acre):</label>
+                <input id="marla" class="form-control" type="number" placeholder="ਮਰਲਾ (1/160th Acre)"
+                    oninput="areaConverter(this.id, this.value)" onchange="areaConverter(this.id, this.value)">
+            </div>
+        </div>
+    </div>
+
+    <!-- Include your separate JavaScript file -->
+    <script src="areaConverter.js"></script>
+</body>
+</html>
