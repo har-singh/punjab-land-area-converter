@@ -31,19 +31,19 @@ function areaConverter(source, valNum) {
     if (source == "acres") {
         sqFeetInput.value = (valNum * acreKanal * kanalMarla * marlaSqft).toFixed(2);
         sqMetersInput.value = (valNum * 4046.86).toFixed(2);
-        kanalInput.value = (valNum * acreKanal).toFixed(6);
+        kanalInput.value = (valNum * acreKanal).toFixed(2);
         marlaInput.value = (valNum * acreKanal * kanalMarla).toFixed(2);
     }
     if (source == "kanal") {
         sqFeetInput.value = (valNum * kanalMarla * marlaSqft).toFixed(2);
         sqMetersInput.value = (valNum / acreKanal * 4046.86).toFixed(2);
         acresInput.value = (valNum / acreKanal).toFixed(6);
-        marlaInput.value = (valNum * kanalMarla).toFixed(2);
+        marlaInput.value = (valNum * kanalMarla).toFixed(6);
     }
     if (source == "marla") {
         sqFeetInput.value = (valNum * marlaSqft).toFixed(2);
         sqMetersInput.value = (valNum / kanalMarla / acreKanal * 4046.86).toFixed(2);
-        acresInput.value = (valNum / kanalMarla / acreKanal).toFixed(2);
+        acresInput.value = (valNum / kanalMarla / acreKanal).toFixed(6);
         kanalInput.value = (valNum / kanalMarla).toFixed(6);
     }
 }
