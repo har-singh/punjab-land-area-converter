@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Area Converter</h1>
+        <p>Type a value in any of the fields to convert between area measurements:</p>
+        <div class="w3-half w3-margin-top">
+            <label>Square Feet:</label>
+            <input id="sqFeet" class="w3-input w3-border" type="number" placeholder="Square Feet"
+                oninput="areaConverter(this.id, this.value)" onchange="areaConverter(this.id, this.value)">
+        </div>
+        <div class="w3-half w3-margin-top">
+            <label>Square Meters:</label>
+            <input id="sqMeters" class="w3-input w3-border" type="number" placeholder="Square Meters"
+                oninput="areaConverter(this.id, this.value)" onchange="areaConverter(this.id, this.value)">
+        </div>
+        <div class="w3-half w3-margin-top">
+            <label>Acres:</label>
+            <input id="acres" class="w3-input w3-border" type="number" placeholder="Acres"
+                oninput="areaConverter(this.id, this.value)" onchange="areaConverter(this.id, this.value)">
+        </div>
+        <div class="w3-half w3-margin-top">
+            <label>ਕਨਾਲ (1/8th Acre):</label>
+            <input id="kanal" class="w3-input w3-border" type="number" placeholder="ਕਨਾਲ (1/8th Acre)"
+                oninput="areaConverter(this.id, this.value)" onchange="areaConverter(this.id, this.value)">
+        </div>
+        <div class="w3-half w3-margin-top">
+            <label>ਮਰਲਾ (1/160th Acre):</label>
+            <input id="marla" class="w3-input w3-border" type="number" placeholder="ਮਰਲਾ (1/160th Acre)"
+                oninput="areaConverter(this.id, this.value)" onchange="areaConverter(this.id, this.value)">
+        </div>
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="areaConverter.js"></script>
+</body>
+</html>
