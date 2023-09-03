@@ -18,8 +18,8 @@ function areaConverter(source, valNum) {
 
     if (source == "sqFeet") {
         sqMetersInput.value = (valNum / 10.7639104).toFixed(2);
-        acresInput.value = (valNum / marlaSqft).toFixed(6);
-        kanalInput.value = (valNum / marlaSqft).toFixed(6);
+        acresInput.value = (valNum / marlaSqft / kanalMarla / acreKanal).toFixed(6);
+        kanalInput.value = (valNum / marlaSqft / kanalMarla).toFixed(6);
         marlaInput.value = (valNum / marlaSqft).toFixed(6);
     }
     if (source == "sqMeters") {
