@@ -1,4 +1,9 @@
-// areaConverter.js
+// Get references to the input elements
+const sqFeetInput = document.getElementById('sqFeet');
+const sqMetersInput = document.getElementById('sqMeters');
+const acresInput = document.getElementById('acres');
+const kanalInput = document.getElementById('kanal');
+const marlaInput = document.getElementById('marla');
 
 // Function to update all fields based on input
 function areaConverter(source, valNum) {
