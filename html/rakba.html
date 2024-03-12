@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakba to Sarsai Converter</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JavaScript and jQuery (Optional for Bootstrap features) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Rakba to Sarsai Converter</h1>
+        <p>Type a value in Rakba format (e.g., 13-5-4) and Sarsai to calculate:</p>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="rakba">Rakba:</label>
+                <input id="rakba" class="form-control" type="text" placeholder="Enter Rakba (e.g., 13-5-4)">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="sarsai">Sarsai:</label>
+                <input id="sarsai" class="form-control" type="number" placeholder="Sarsai" readonly>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript file -->
+    <script src="rakbaConverter.js"></script>
+</body>
+</html>
