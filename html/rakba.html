@@ -22,10 +22,11 @@
             <div class="col-md-6 mb-3">
                 <label for="rakba">Rakba:</label>
                 <input id="rakba" class="form-control" type="text" placeholder="Enter Rakba (e.g., 13-5-4)" onchange="rakbaToSarsaiConverter()">
+                <div id="error-message" class="text-danger"></div>
             </div>
             <div class="col-md-6 mb-3">
                 <label for="sarsai">Sarsai:</label>
-                <input id="sarsai" class="form-control" type="number" placeholder="Sarsai" readonly>
+                <input id="sarsai" class="form-control" type="number" placeholder="Sarsai" onchange="sarsaiToRakbaConverter()">
             </div>
         </div>
     </div>
