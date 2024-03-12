@@ -24,6 +24,3 @@ function rakbaToSarsaiConverter() {
         sarsaiInput.value = ''; // Clear the Sarsai input if Rakba is empty
     }
 }
-
-// Event listener to trigger conversion when Rakba input changes
-rakbaInput.addEventListener('input', rakbaToSarsaiConverter);
