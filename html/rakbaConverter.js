@@ -1,6 +1,6 @@
 // Get references to the input elements
 const rakbaInput = document.getElementById('rakba');
-const sarsaiInput = document.getElementById('sarsai');
+const rakbaSarsaiInput = document.getElementById('rakbaSarsai');
 const errorDiv = document.getElementById('error-message');
 
 // Function to update sarsai based on Rakba input
@@ -17,20 +17,20 @@ function rakbaToSarsaiConverter() {
             const sarsai = parseInt(rakbaParts[2]);
 
             const totalSarsai = kanal * 180 + marla * 9 + sarsai;
-            sarsaiInput.value = totalSarsai;
+            rakbaSarsaiInput.value = totalSarsai;
             errorDiv.textContent = ''; // Clear error message
         } else {
             errorDiv.textContent = "Invalid Rakba format. Please provide a valid Rakba in the format [kanal]-[marla]-[sarsai].";
         }
     } else {
-        sarsaiInput.value = ''; // Clear the Sarsai input if Rakba is empty
+        rakbaSarsaiInput.value = ''; // Clear the Sarsai input if Rakba is empty
         errorDiv.textContent = ''; // Clear error message
     }
 }
 
 // Function to update Rakba based on Sarsai input
 function sarsaiToRakbaConverter() {
-    const sarsaiValue = parseInt(sarsaiInput.value);
+    const sarsaiValue = parseInt(rakbaSarsaiInput.value);
 
     if (!isNaN(sarsaiValue) && sarsaiValue >= 0) {
         const kanal = Math.floor(sarsaiValue / 180);

@@ -67,9 +67,26 @@
                     oninput="areaConverter(this.id, this.value)" onchange="areaConverter(this.id, this.value)">
             </div>
         </div>
+    
+        <div class="container mt-5">
+            <h1 class="mb-4">Rakba to Sarsai Converter</h1>
+            <p>Type a value in Rakba format (e.g., 13-5-4) and Sarsai to calculate:</p>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="rakba">Rakba:</label>
+                    <input id="rakba" class="form-control" type="text" placeholder="Enter Rakba (e.g., 13-5-4)" onchange="rakbaToSarsaiConverter()">
+                    <div id="error-message" class="text-danger"></div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="rakbaSarsai">Sarsai:</label>
+                    <input id="rakbaSarsai" class="form-control" type="number" placeholder="Sarsai" onchange="sarsaiToRakbaConverter()">
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- JavaScript file -->
     <script src="areaConverter.js"></script>
+    <script src="rakbaConverter.js"></script>
 </body>
 </html>

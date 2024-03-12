@@ -51,9 +51,9 @@ function areaConverter(source, valNum) {
         sarsaiInput.value = (valNum * sarsaiMarla).toFixed(2);
     } else if (source === "sarsai") {
         sqFeetInput.value = (valNum * sarsaiSqft).toFixed(2);
-        sqMetersInput.value = (valNum * sarsaiSqft / 10.7639104).toFixed(2);
-        acresInput.value = (valNum * sarsaiMarla * kanalMarla * acreKanal / 9 / 10.7639104).toFixed(6);
-        kanalInput.value = (valNum * sarsaiMarla * kanalMarla / 9 / 10.7639104).toFixed(6);
+        sqMetersInput.value = (valNum / sarsaiMarla / kanalMarla / acreKanal * 4046.86).toFixed(2);
+        acresInput.value = (valNum / sarsaiMarla / kanalMarla / acreKanal).toFixed(6);
+        kanalInput.value = (valNum / sarsaiMarla / kanalMarla).toFixed(6);
         marlaInput.value = (valNum / 9).toFixed(2);
     }
 }
