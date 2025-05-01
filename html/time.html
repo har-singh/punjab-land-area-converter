@@ -12,11 +12,17 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      background-color: #f7f7f7;
     }
 
     .container {
       max-width: 400px;
       width: 100%;
+      box-sizing: border-box;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     input, button {
@@ -25,18 +31,46 @@
       margin-top: 1rem;
       font-size: 1rem;
       box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #0056b3;
     }
 
     .output {
       margin-top: 1.5rem;
       font-weight: bold;
       text-align: center;
+      font-size: 1.2rem;
+    }
+
+    /* Mobile specific styling */
+    @media (max-width: 600px) {
+      input, button {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <input type="time" id="timeInput" />
+    <input type="time" id="timeInput" value="08:00" list="timeList" />
+    <datalist id="timeList">
+      <option value="07:00">
+      <option value="07:30">
+      <option value="08:00">
+      <option value="08:30">
+      <option value="09:00">
+    </datalist>
     <button onclick="addTime()">Add 7h 12m</button>
     <div class="output" id="result"></div>
   </div>
