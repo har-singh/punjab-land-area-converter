@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert between land area units used in Punjab agriculture - Kanal, Marla, Sarsai, Acres, Square Feet, and Square Meters. Free online calculator.">
+    <meta name="keywords" content="Punjab land converter, Kanal to Marla, Sarsai calculator, agriculture land units, area converter India">
+    <meta name="author" content="har-singh">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Punjab Land Area Converter">
+    <meta property="og:description" content="Convert between Kanal, Marla, Sarsai, Acres and other land units used in Punjab agriculture.">
+    <meta property="og:type" content="website">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0d6efd">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Area Converter">
+    
+    <title>Punjab Land Area Converter</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Area Converter</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Area Conversion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rakba.html">Rakba Converter</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="container mt-4">
+        <!-- Area Converter Section -->
+        <section class="converter-section" aria-labelledby="area-converter-heading">
+            <h1 id="area-converter-heading" class="mb-3">Area Converter</h1>
+            <p class="text-muted">Type a value in any field to convert between area measurements:</p>
+            
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="sqFeet" class="form-label">Square Feet</label>
+                    <input id="sqFeet" class="form-control" type="number" min="0" step="any"
+                        placeholder="Enter square feet" aria-label="Square Feet"
+                        oninput="areaConverter(this.id, this.value)">
+                </div>
+                <div class="col-md-6">
+                    <label for="sqMeters" class="form-label">Square Meters</label>
+                    <input id="sqMeters" class="form-control" type="number" min="0" step="any"
+                        placeholder="Enter square meters" aria-label="Square Meters"
+                        oninput="areaConverter(this.id, this.value)">
+                </div>
+                <div class="col-md-6">
+                    <label for="acres" class="form-label">Acres</label>
+                    <input id="acres" class="form-control" type="number" min="0" step="any"
+                        placeholder="Enter acres" aria-label="Acres"
+                        oninput="areaConverter(this.id, this.value)">
+                </div>
+                <div class="col-md-6">
+                    <label for="kanal" class="form-label">ਕਨਾਲ (Kanal - 1/8th Acre)</label>
+                    <input id="kanal" class="form-control" type="number" min="0" step="any"
+                        placeholder="Enter kanal" aria-label="Kanal"
+                        oninput="areaConverter(this.id, this.value)">
+                </div>
+                <div class="col-md-6">
+                    <label for="marla" class="form-label">ਮਰਲਾ (Marla - 1/20th Kanal)</label>
+                    <input id="marla" class="form-control" type="number" min="0" step="any"
+                        placeholder="Enter marla" aria-label="Marla"
+                        oninput="areaConverter(this.id, this.value)">
+                </div>
+                <div class="col-md-6">
+                    <label for="sarsai" class="form-label">ਸਰਸਾਈ (Sarsai - 1/9th Marla)</label>
+                    <input id="sarsai" class="form-control" type="number" min="0" step="any"
+                        placeholder="Enter sarsai" aria-label="Sarsai"
+                        oninput="areaConverter(this.id, this.value)">
+                </div>
+            </div>
+            
+            <button type="button" class="btn btn-outline-secondary btn-clear" onclick="clearAreaFields()">
+                Clear All
+            </button>
+        </section>
+
+        <hr class="my-4">
+
+        <!-- Rakba Converter Section -->
+        <section class="converter-section" aria-labelledby="rakba-converter-heading">
+            <h2 id="rakba-converter-heading" class="mb-3">Rakba to Sarsai Converter</h2>
+            <p class="text-muted">Convert between Rakba format (kanal-marla-sarsai) and total Sarsai:</p>
+            
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="rakba" class="form-label">Rakba (format: kanal-marla-sarsai)</label>
+                    <input id="rakba" class="form-control" type="text" 
+                        placeholder="e.g., 13-5-4" aria-label="Rakba in kanal-marla-sarsai format"
+                        oninput="rakbaToSarsaiConverter()">
+                    <div id="error-message" class="error-message text-danger" role="alert"></div>
+                </div>
+                <div class="col-md-6">
+                    <label for="rakbaSarsai" class="form-label">Total Sarsai</label>
+                    <input id="rakbaSarsai" class="form-control" type="number" min="0"
+                        placeholder="Total sarsai" aria-label="Total Sarsai"
+                        oninput="sarsaiToRakbaConverter()">
+                </div>
+            </div>
+            
+            <button type="button" class="btn btn-outline-secondary btn-clear" onclick="clearRakbaFields()">
+                Clear
+            </button>
+        </section>
+
+        <!-- Conversion Reference -->
+        <section class="converter-section mt-4" aria-labelledby="reference-heading">
+            <h3 id="reference-heading" class="h5">Quick Reference</h3>
+            <div class="table-responsive">
+                <table class="table table-sm table-bordered">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Unit</th>
+                            <th>Equivalent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1 Acre</td><td>8 Kanal</td></tr>
+                        <tr><td>1 Kanal</td><td>20 Marla</td></tr>
+                        <tr><td>1 Marla</td><td>9 Sarsai</td></tr>
+                        <tr><td>1 Marla</td><td>272.25 sq ft</td></tr>
+                        <tr><td>1 Sarsai</td><td>30.25 sq ft</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container text-center text-muted">
+        <p>&copy; 2025 Punjab Land Area Converter. Works offline.</p>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Application Scripts -->
+    <script src="js/areaConverter.js"></script>
+    <script src="js/rakbaConverter.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then((registration) => {
+                        console.log('ServiceWorker registered:', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.log('ServiceWorker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
