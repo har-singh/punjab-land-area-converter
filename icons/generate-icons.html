@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Generate Tractor Icons</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    canvas { border: 1px solid #ccc; margin: 10px; }
+    .icon-container { display: inline-block; text-align: center; margin: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Tractor Icons for PWA</h1>
+  <p>Right-click on each canvas and "Save image as" to save the PNG files.</p>
+  
+  <div class="icon-container">
+    <canvas id="icon192" width="192" height="192"></canvas>
+    <p>icon-192.png</p>
+  </div>
+  
+  <div class="icon-container">
+    <canvas id="icon512" width="512" height="512"></canvas>
+    <p>icon-512.png</p>
+  </div>
+
+  <script>
+    function drawTractor(ctx, size) {
+      const scale = size / 512;
+      ctx.scale(scale, scale);
+      
+      // Background circle
+      ctx.fillStyle = '#87CEEB';
+      ctx.beginPath();
+      ctx.arc(256, 256, 256, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Ground
+      ctx.fillStyle = '#8b4513';
+      ctx.beginPath();
+      ctx.roundRect(60, 385, 392, 12, 4);
+      ctx.fill();
+      
+      // Tractor body
+      ctx.fillStyle = '#2e7d32';
+      ctx.beginPath();
+      ctx.roundRect(120, 220, 200, 90, 10);
+      ctx.fill();
+      
+      // Tractor cabin
+      ctx.fillStyle = '#4caf50';
+      ctx.beginPath();
+      ctx.roundRect(220, 155, 85, 65, 5);
+      ctx.fill();
+      
+      // Cabin window
+      ctx.fillStyle = '#87ceeb';
+      ctx.beginPath();
+      ctx.roundRect(230, 165, 65, 40, 3);
+      ctx.fill();
+      
+      // Engine hood
+      ctx.fillStyle = '#1b5e20';
+      ctx.beginPath();
+      ctx.roundRect(85, 245, 55, 55, 5);
+      ctx.fill();
+      
+      // Exhaust pipe
+      ctx.fillStyle = '#424242';
+      ctx.beginPath();
+      ctx.roundRect(100, 200, 12, 50, 2);
+      ctx.fill();
+      
+      ctx.fillStyle = '#616161';
+      ctx.beginPath();
+      ctx.ellipse(106, 195, 8, 5, 0, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Rear large wheel - touches ground at y=385
+      ctx.fillStyle = '#212121';
+      ctx.beginPath();
+      ctx.arc(290, 310, 75, 0, Math.PI * 2);
+      ctx.fill();
+      
+      ctx.fillStyle = '#424242';
+      ctx.beginPath();
+      ctx.arc(290, 310, 60, 0, Math.PI * 2);
+      ctx.fill();
+      
+      ctx.fillStyle = '#ffc107';
+      ctx.beginPath();
+      ctx.arc(290, 310, 25, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Wheel spokes - rear
+      ctx.fillStyle = '#ffc107';
+      ctx.fillRect(287, 240, 6, 140);
+      ctx.fillRect(220, 307, 140, 6);
+      
+      // Front small wheel - touches ground at y=385
+      ctx.fillStyle = '#212121';
+      ctx.beginPath();
+      ctx.arc(115, 345, 40, 0, Math.PI * 2);
+      ctx.fill();
+      
+      ctx.fillStyle = '#424242';
+      ctx.beginPath();
+      ctx.arc(115, 345, 30, 0, Math.PI * 2);
+      ctx.fill();
+      
+      ctx.fillStyle = '#ffc107';
+      ctx.beginPath();
+      ctx.arc(115, 345, 12, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Headlight
+      ctx.fillStyle = '#ffeb3b';
+      ctx.beginPath();
+      ctx.ellipse(85, 270, 8, 12, 0, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    
+    // Draw 192x192 icon
+    const ctx192 = document.getElementById('icon192').getContext('2d');
+    drawTractor(ctx192, 192);
+    
+    // Draw 512x512 icon
+    const ctx512 = document.getElementById('icon512').getContext('2d');
+    drawTractor(ctx512, 512);
+  </script>
+</body>
+</html>
