@@ -1,6 +1,7 @@
 // Get references to the input elements
 const rakbaInput = document.getElementById('rakba');
-const rakbaSarsaiInput = document.getElementById('rakbaSarsai');
+// Support both index.html (rakbaSarsai) and rakba.html (sarsai)
+const rakbaSarsaiInput = document.getElementById('rakbaSarsai') || document.getElementById('sarsai');
 const errorDiv = document.getElementById('error-message');
 
 // Function to update sarsai based on Rakba input

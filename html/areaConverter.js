@@ -19,6 +19,11 @@ const acreKanal = 8; // 1 acre = 8 kanal
 function areaConverter(source, valNum) {
     valNum = parseFloat(valNum);
 
+    // Validate input - check for NaN or negative values
+    if (isNaN(valNum) || valNum < 0) {
+        return;
+    }
+
     if (source === "sqFeet") {
         sqMetersInput.value = (valNum / 10.7639104).toFixed(2);
         acresInput.value = (valNum / marlaSqft / kanalMarla / acreKanal).toFixed(6);
@@ -30,7 +35,7 @@ function areaConverter(source, valNum) {
         acresInput.value = (valNum / 4046.86).toFixed(6);
         kanalInput.value = (valNum * acreKanal / 4046.86).toFixed(6);
         marlaInput.value = (valNum * kanalMarla * acreKanal / 4046.86).toFixed(2);
-        sarsaiInput.value = (valNum / sarsaiSqft).toFixed(6);
+        sarsaiInput.value = (valNum * 10.7639104 / sarsaiSqft).toFixed(6);
     } else if (source === "acres") {
         sqFeetInput.value = (valNum * acreKanal * kanalMarla * marlaSqft).toFixed(2);
         sqMetersInput.value = (valNum * 4046.86).toFixed(2);
